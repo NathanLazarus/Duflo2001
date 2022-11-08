@@ -1,0 +1,1412 @@
+--------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Nathan\Downloads\inpresrepli\log/table5.log
+  log type:  text
+ opened on:  23 Oct 2022, 18:16:12
+
+. *EDUCATION;
+. quietly anova yeduc birthpl p504th p504th*ch71 nin*dum, reg cont(nin ch7
+> 1) ;
+
+. display "N.OBS  " e(N);
+N.OBS  152989
+
+. display "R. squared" e(r2);
+R. squared.19023551
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  615.212084    11  55.9283713       4.03     0.
+> 0000
+                Residual |  2116952.62152644   13.868561   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= -.03451178
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .04710912
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= .01120442
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .04558679
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .05909456
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .04736498
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .1402488
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .03939697
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .08861395
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .0491752
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .12326873
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .04448461
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .13740899
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .04228637
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .10044583
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .04339795
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .11082733
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .0395393
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .10870588
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .04484691
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .14439689
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .04110172
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 nin*dum, reg 
+> cont(nin ch71 en71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  152495
+
+. display "R. squared" e(r2);
+R. squared.19079663
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  790.465785    11  71.8605259       5.18     0.
+> 0000
+                Residual |  2108855.54152130  13.8621938   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= -.02492379
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .0484027
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= .02473972
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .04707571
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .04927615
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .04899632
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .13944411
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .0406874
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .10717433
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .0503205
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .14253883
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .04640888
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .1682268
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .0438909
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .13276769
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .04476234
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .12181049
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .0408598
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .14078923
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .04639898
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .19160881
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .04303815
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 p504thn*wsppc
+>  nin*dum, reg cont(nin ch71 en71 wsppc) ;
+
+. display "N.OBS  " e(N);
+N.OBS  143107
+
+. display "R. squared" e(r2);
+R. squared.1692494
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  946.230667    11  86.0209697       6.15     0.
+> 0000
+                Residual |  1996958.03142727  13.9914524   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= .00183697
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .05389304
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= .01826986
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .05140099
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .07809606
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .0542659
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .15469465
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .04471384
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .11365765
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .05396617
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .15836689
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .05111309
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .25468202
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .04913453
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .12827344
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .05022185
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .17274831
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .04640117
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .19955843
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .05314262
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .1927914
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .04876522
+
+. *EDUCATION, wage sample ;
+. quietly anova yeduc birthpl p504th p504th*ch71 nin*dum if lhwage!=.,
+> reg cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  60663
+
+. display "R. squared" e(r2);
+R. squared.14292499
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  416.042973    11  37.8220884       2.70     0.
+> 0018
+                Residual |  844650.944 60318  14.0032983   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= -.03981475
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .07682693
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= .00845931
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .07293758
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .10051274
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .07493473
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .06694561
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .06527171
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .18677366
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .07807049
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .1095584
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .0718692
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .22877364
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .0696803
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .13781114
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .07462898
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .19338173
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .06852389
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .14834121
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .0786062
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .1995164
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .07294746
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 nin*dum if lh
+> wage!=.,
+>  reg cont(nin ch71 en71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  60466
+
+. display "R. squared" e(r2);
+R. squared.14349577
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  437.727135    11  39.7933759       2.84     0.
+> 0010
+                Residual |  841361.147 60101  13.9991206   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= -.00990079
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .0779288
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= .01398457
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .07371416
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .09161269
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .07607116
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .0635861
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .06607027
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .19915857
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .07861095
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .13282429
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .07282775
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .23400564
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .0701639
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .15738008
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .07516073
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .19233184
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .06916431
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .16978704
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .07972996
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .21682038
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .07414782
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 p504thn*wsppc
+>  nin*dum if lhwage!=.,
+>  reg cont(nin ch71 en71 wsppc) ;
+
+. display "N.OBS  " e(N);
+N.OBS  55144
+
+. display "R. squared" e(r2);
+R. squared.1352112
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  690.220574    11  62.7473249       4.38     0.
+> 0000
+                Residual |   784798.28 54764  14.3305507   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= .0093992
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .09056848
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= -.0030892
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .08258032
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .12897161
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .08984664
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .17272558
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .07656057
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .28113977
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .08878373
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .16042609
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .08355287
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .31807191
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .08356279
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .26715507
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .08811074
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .29293028
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .08210661
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .29561124
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .09672153
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .25495709
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .08788925
+
+. *WAGE;
+. quietly anova lhwage birthpl p504th p504th*ch71 nin*dum, reg cont(nin ch
+> 71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  60663
+
+. display "R. squared" e(r2);
+R. squared.1481176
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  5.07867464    11  .461697694       1.13     0.
+> 3331
+                Residual |  24668.1724 60318  .408968673   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= .0160045
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .01312935
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= -.01373043
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .01246468
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .00365463
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .01280599
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .00945209
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .01115462
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .01933136
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .01334187
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= -.00947148
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .0122821
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .0114911
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .01190803
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .02130833
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .01275373
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .01865577
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .0117104
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .0078541
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .01343342
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .01580105
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .01246637
+
+. quietly anova lhwage birthpl p504th p504th*ch71 p504th*en71 nin*dum, reg
+>  cont(nin ch71 en71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  60466
+
+. display "R. squared" e(r2);
+R. squared.14901099
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |  5.81657486    11  .528779532       1.29     0.
+> 2203
+                Residual |  24558.4016 60101  .408618852   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X= " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= .0186824
+
+->  display `"se 1= "' _se[nin*dum[1]]
+se 1= .01331395
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= -.01299728
+
+->  display `"se 2= "' _se[nin*dum[2]]
+se 2= .01259389
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .00429852
+
+->  display `"se 3= "' _se[nin*dum[3]]
+se 3= .01299657
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .00983221
+
+->  display `"se 4= "' _se[nin*dum[4]]
+se 4= .01128794
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .02056756
+
+->  display `"se 5= "' _se[nin*dum[5]]
+se 5= .01343049
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= -.0049706
+
+->  display `"se 6= "' _se[nin*dum[6]]
+se 6= .01244244
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .01341298
+
+->  display `"se 7= "' _se[nin*dum[7]]
+se 7= .01198733
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .02275018
+
+->  display `"se 8= "' _se[nin*dum[8]]
+se 8= .01284103
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .02028358
+
+->  display `"se 9= "' _se[nin*dum[9]]
+se 9= .01181655
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .01276283
+
+->  display `"se 10= "' _se[nin*dum[10]]
+se 10= .01362167
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .02310247
+
+->  display `"se 11= "' _se[nin*dum[11]]
+se 11= .01266798
+
+. quietly anova lhwage birthpl p504th p504th*ch71 p504th*en71 p504thn*wspp
+> c nin*dum, reg cont(nin ch71 en71 wsppc) ;
+
+. display "N.OBS  " e(N);
+N.OBS  55144
+
+. display "R. squared" e(r2);
+R. squared.14207721
+
+. test nin*dum;
+
+                  Source |  Partial SS    df       MS           F     Prob
+>  > F
+              -----------+------------------------------------------------
+> ----
+                 nin*dum |    11.80171    11  1.07288273       2.61     0.
+> 0026
+                Residual |  22538.0829 54764  .411549246   
+
+. for X in num 1/11:
+> display "coeff X= " _b[nin*dum[X]]\
+> display "se X = " _se[nin*dum[X]];
+
+->  display `"coeff 1= "' _b[nin*dum[1]]
+coeff 1= .02716242
+
+->  display `"se 1 = "' _se[nin*dum[1]]
+se 1 = .01534817
+
+->  display `"coeff 2= "' _b[nin*dum[2]]
+coeff 2= -.00863838
+
+->  display `"se 2 = "' _se[nin*dum[2]]
+se 2 = .01399446
+
+->  display `"coeff 3= "' _b[nin*dum[3]]
+coeff 3= .0058773
+
+->  display `"se 3 = "' _se[nin*dum[3]]
+se 3 = .01522584
+
+->  display `"coeff 4= "' _b[nin*dum[4]]
+coeff 4= .0182019
+
+->  display `"se 4 = "' _se[nin*dum[4]]
+se 4 = .01297432
+
+->  display `"coeff 5= "' _b[nin*dum[5]]
+coeff 5= .02675743
+
+->  display `"se 5 = "' _se[nin*dum[5]]
+se 5 = .01504572
+
+->  display `"coeff 6= "' _b[nin*dum[6]]
+coeff 6= .00662819
+
+->  display `"se 6 = "' _se[nin*dum[6]]
+se 6 = .01415927
+
+->  display `"coeff 7= "' _b[nin*dum[7]]
+coeff 7= .01818654
+
+->  display `"se 7 = "' _se[nin*dum[7]]
+se 7 = .01416095
+
+->  display `"coeff 8= "' _b[nin*dum[8]]
+coeff 8= .05165073
+
+->  display `"se 8 = "' _se[nin*dum[8]]
+se 8 = .01493167
+
+->  display `"coeff 9= "' _b[nin*dum[9]]
+coeff 9= .03767216
+
+->  display `"se 9 = "' _se[nin*dum[9]]
+se 9 = .01391418
+
+->  display `"coeff 10= "' _b[nin*dum[10]]
+coeff 10= .02730042
+
+->  display `"se 10 = "' _se[nin*dum[10]]
+se 10 = .01639089
+
+->  display `"coeff 11= "' _b[nin*dum[11]]
+coeff 11= .03995103
+
+->  display `"se 11 = "' _se[nin*dum[11]]
+se 11 = .01489413
+
+. 
+end of do-file
+
+. do table6;
+
+. # delimit ;
+delimiter now ;
+. *2SLS;
+. *use supa2, clear;
+. use inpresdata, clear;
+
+. keep if lhwage !=.;
+(92,327 observations deleted)
+
+. keep birthpl ch71 en71 nin wsppc lhwage yeduc dum p504thn;
+
+. tab birthpl, gen(ROB);
+
+   province |
+        and |
+  kabupaten |
+of birth (4 |
+    digits) |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       1101 |        136        0.22        0.22
+       1102 |         63        0.10        0.33
+       1103 |        152        0.25        0.58
+       1104 |         53        0.09        0.67
+       1105 |        111        0.18        0.85
+       1106 |        129        0.21        1.06
+       1107 |        173        0.29        1.35
+       1108 |        167        0.28        1.62
+       1171 |        168        0.28        1.90
+       1172 |         69        0.11        2.01
+       1201 |         93        0.15        2.17
+       1202 |        230        0.38        2.55
+       1203 |        118        0.19        2.74
+       1204 |        352        0.58        3.32
+       1205 |        207        0.34        3.66
+       1206 |        327        0.54        4.20
+       1207 |        365        0.60        4.80
+       1208 |         89        0.15        4.95
+       1209 |         98        0.16        5.11
+       1210 |        409        0.67        5.78
+       1211 |        283        0.47        6.25
+       1271 |        150        0.25        6.50
+       1272 |        137        0.23        6.72
+       1273 |        239        0.39        7.12
+       1274 |        168        0.28        7.39
+       1275 |        793        1.31        8.70
+       1276 |        176        0.29        8.99
+       1301 |        173        0.29        9.28
+       1302 |        155        0.26        9.53
+       1303 |         77        0.13        9.66
+       1304 |        167        0.28        9.94
+       1305 |        231        0.38       10.32
+       1306 |        150        0.25       10.56
+       1307 |        170        0.28       10.84
+       1308 |        106        0.17       11.02
+       1371 |        445        0.73       11.75
+       1372 |         73        0.12       11.87
+       1373 |        128        0.21       12.08
+       1374 |         78        0.13       12.21
+       1375 |        156        0.26       12.47
+       1376 |        124        0.20       12.67
+       1401 |         95        0.16       12.83
+       1402 |         67        0.11       12.94
+       1403 |        290        0.48       13.42
+       1404 |        120        0.20       13.62
+       1405 |        239        0.39       14.01
+       1471 |        148        0.24       14.25
+       1472 |         46        0.08       14.33
+       1501 |        128        0.21       14.54
+       1502 |         83        0.14       14.68
+       1503 |         91        0.15       14.83
+       1504 |         87        0.14       14.97
+       1505 |         47        0.08       15.05
+       1571 |        173        0.29       15.33
+       1601 |        110        0.18       15.52
+       1602 |        131        0.22       15.73
+       1603 |        144        0.24       15.97
+       1604 |        133        0.22       16.19
+       1605 |        101        0.17       16.35
+       1606 |         90        0.15       16.50
+       1607 |        253        0.42       16.92
+       1608 |        163        0.27       17.19
+       1671 |        403        0.66       17.85
+       1672 |        180        0.30       18.15
+       1701 |        123        0.20       18.35
+       1702 |         97        0.16       18.51
+       1703 |         38        0.06       18.57
+       1771 |         74        0.12       18.70
+       1801 |        164        0.27       18.97
+       1802 |        121        0.20       19.17
+       1803 |         74        0.12       19.29
+       1804 |         35        0.06       19.35
+       1871 |        209        0.34       19.69
+       3171 |      1,174        1.94       21.63
+       3172 |      1,219        2.01       23.64
+       3173 |      1,079        1.78       25.41
+       3174 |      1,146        1.89       27.30
+       3175 |        618        1.02       28.32
+       3201 |        201        0.33       28.65
+       3202 |        164        0.27       28.92
+       3203 |        441        0.73       29.65
+       3204 |        369        0.61       30.26
+       3205 |        306        0.50       30.76
+       3206 |        496        0.82       31.58
+       3207 |        384        0.63       32.21
+       3208 |        357        0.59       32.80
+       3209 |        327        0.54       33.34
+       3210 |        283        0.47       33.81
+       3211 |        438        0.72       34.53
+       3212 |        235        0.39       34.92
+       3213 |        268        0.44       35.36
+       3214 |        294        0.48       35.84
+       3215 |        301        0.50       36.34
+       3216 |        177        0.29       36.63
+       3217 |        282        0.46       37.10
+       3218 |        139        0.23       37.33
+       3219 |        253        0.42       37.74
+       3220 |        332        0.55       38.29
+       3271 |        252        0.42       38.71
+       3272 |        185        0.30       39.01
+       3273 |        537        0.89       39.90
+       3274 |        216        0.36       40.25
+       3275 |        130        0.21       40.47
+       3301 |        416        0.69       41.15
+       3302 |        511        0.84       41.99
+       3303 |        247        0.41       42.40
+       3304 |        212        0.35       42.75
+       3305 |        468        0.77       43.52
+       3306 |        436        0.72       44.24
+       3307 |        253        0.42       44.66
+       3308 |        349        0.58       45.23
+       3309 |        311        0.51       45.75
+       3310 |        536        0.88       46.63
+       3311 |        248        0.41       47.04
+       3312 |        415        0.68       47.72
+       3313 |        220        0.36       48.09
+       3314 |        273        0.45       48.54
+       3315 |        261        0.43       48.97
+       3316 |        183        0.30       49.27
+       3317 |        202        0.33       49.60
+       3318 |        391        0.64       50.24
+       3319 |        357        0.59       50.83
+       3320 |        326        0.54       51.37
+       3321 |        250        0.41       51.78
+       3322 |        369        0.61       52.39
+       3323 |        189        0.31       52.70
+       3324 |        290        0.48       53.18
+       3325 |        268        0.44       53.62
+       3326 |        323        0.53       54.15
+       3327 |        312        0.51       54.67
+       3328 |        328        0.54       55.21
+       3329 |        378        0.62       55.83
+       3371 |        260        0.43       56.26
+       3372 |        414        0.68       56.94
+       3373 |        181        0.30       57.24
+       3374 |        509        0.84       58.08
+       3375 |        197        0.32       58.41
+       3376 |        243        0.40       58.81
+       3401 |        158        0.26       59.07
+       3402 |        317        0.52       59.59
+       3403 |        231        0.38       59.97
+       3404 |        338        0.56       60.53
+       3471 |        391        0.64       61.17
+       3501 |        201        0.33       61.50
+       3502 |        267        0.44       61.94
+       3503 |        175        0.29       62.23
+       3504 |        297        0.49       62.72
+       3505 |        284        0.47       63.19
+       3506 |        468        0.77       63.96
+       3507 |        474        0.78       64.74
+       3508 |        275        0.45       65.20
+       3509 |        383        0.63       65.83
+       3510 |        410        0.68       66.50
+       3511 |        165        0.27       66.78
+       3512 |        170        0.28       67.06
+       3513 |        258        0.43       67.48
+       3514 |        313        0.52       68.00
+       3515 |        370        0.61       68.61
+       3516 |        354        0.58       69.19
+       3517 |        401        0.66       69.85
+       3518 |        331        0.55       70.40
+       3519 |        329        0.54       70.94
+       3520 |        243        0.40       71.34
+       3521 |        244        0.40       71.74
+       3522 |        207        0.34       72.08
+       3523 |        185        0.30       72.39
+       3524 |        262        0.43       72.82
+       3525 |        210        0.35       73.17
+       3526 |        165        0.27       73.44
+       3527 |        126        0.21       73.65
+       3528 |        112        0.18       73.83
+       3529 |        171        0.28       74.11
+       3571 |        238        0.39       74.51
+       3572 |        139        0.23       74.73
+       3573 |        230        0.38       75.11
+       3574 |        204        0.34       75.45
+       3575 |        178        0.29       75.74
+       3576 |        181        0.30       76.04
+       3577 |        172        0.28       76.32
+       3578 |        654        1.08       77.40
+       5101 |        147        0.24       77.65
+       5102 |        275        0.45       78.10
+       5103 |        259        0.43       78.53
+       5104 |        257        0.42       78.95
+       5105 |        158        0.26       79.21
+       5106 |        151        0.25       79.46
+       5107 |        129        0.21       79.67
+       5108 |        229        0.38       80.05
+       5171 |        189        0.31       80.36
+       5201 |        150        0.25       80.61
+       5202 |        155        0.26       80.86
+       5203 |        191        0.31       81.18
+       5204 |         97        0.16       81.34
+       5205 |         86        0.14       81.48
+       5206 |        212        0.35       81.83
+       5271 |        135        0.22       82.05
+       5301 |         62        0.10       82.15
+       5302 |         59        0.10       82.25
+       5303 |        145        0.24       82.49
+       5304 |         76        0.13       82.62
+       5305 |         73        0.12       82.74
+       5306 |         99        0.16       82.90
+       5307 |        110        0.18       83.08
+       5308 |        138        0.23       83.31
+       5309 |         76        0.13       83.43
+       5310 |        135        0.22       83.66
+       5311 |         79        0.13       83.79
+       5312 |        111        0.18       83.97
+       6101 |        134        0.22       84.19
+       6102 |        224        0.37       84.56
+       6103 |         96        0.16       84.72
+       6104 |         93        0.15       84.87
+       6105 |         95        0.16       85.03
+       6106 |         79        0.13       85.16
+       6171 |        194        0.32       85.48
+       6201 |         79        0.13       85.61
+       6202 |         78        0.13       85.74
+       6203 |         93        0.15       85.89
+       6204 |        100        0.16       86.05
+       6205 |         57        0.09       86.15
+       6271 |         38        0.06       86.21
+       6301 |         59        0.10       86.31
+       6302 |         88        0.15       86.45
+       6303 |         98        0.16       86.61
+       6304 |         51        0.08       86.70
+       6305 |         98        0.16       86.86
+       6306 |        121        0.20       87.06
+       6307 |        121        0.20       87.26
+       6308 |         93        0.15       87.41
+       6309 |        103        0.17       87.58
+       6371 |        229        0.38       87.96
+       6401 |         51        0.08       88.04
+       6402 |        142        0.23       88.28
+       6403 |         89        0.15       88.42
+       6404 |        109        0.18       88.60
+       6471 |        163        0.27       88.87
+       6472 |        106        0.17       89.05
+       7101 |        183        0.30       89.35
+       7102 |         99        0.16       89.51
+       7103 |        322        0.53       90.04
+       7104 |        229        0.38       90.42
+       7171 |        172        0.28       90.70
+       7172 |        226        0.37       91.08
+       7173 |         48        0.08       91.16
+       7201 |        101        0.17       91.32
+       7202 |        154        0.25       91.58
+       7203 |        200        0.33       91.91
+       7204 |        150        0.25       92.15
+       7301 |         76        0.13       92.28
+       7302 |        125        0.21       92.48
+       7303 |         55        0.09       92.58
+       7304 |        115        0.19       92.76
+       7305 |         91        0.15       92.91
+       7306 |        151        0.25       93.16
+       7307 |         92        0.15       93.32
+       7308 |        104        0.17       93.49
+       7309 |        105        0.17       93.66
+       7310 |         89        0.15       93.81
+       7311 |        186        0.31       94.11
+       7312 |        105        0.17       94.29
+       7313 |         82        0.14       94.42
+       7314 |        111        0.18       94.60
+       7315 |         95        0.16       94.76
+       7316 |         86        0.14       94.90
+       7317 |        115        0.19       95.09
+       7318 |        190        0.31       95.41
+       7319 |        121        0.20       95.61
+       7320 |         80        0.13       95.74
+       7321 |         41        0.07       95.80
+       7371 |        490        0.81       96.61
+       7372 |        113        0.19       96.80
+       7401 |        175        0.29       97.09
+       7402 |        102        0.17       97.26
+       7403 |        105        0.17       97.43
+       7404 |         44        0.07       97.50
+       8101 |        150        0.25       97.75
+       8102 |        186        0.31       98.05
+       8103 |        152        0.25       98.31
+       8104 |         87        0.14       98.45
+       8171 |        216        0.36       98.80
+       8201 |         67        0.11       98.92
+       8202 |         61        0.10       99.02
+       8203 |        120        0.20       99.21
+       8204 |         47        0.08       99.29
+       8205 |         58        0.10       99.39
+       8206 |         62        0.10       99.49
+       8207 |         67        0.11       99.60
+       8208 |        100        0.16       99.76
+       8209 |        120        0.20       99.96
+       8271 |         23        0.04      100.00
+------------+-----------------------------------
+      Total |     60,663      100.00
+
+. tab p504thn, gen(year);
+
+    year of |
+      birth |      Freq.     Percent        Cum.
+------------+-----------------------------------
+         50 |      1,986        3.27        3.27
+         51 |      1,443        2.38        5.65
+         52 |      1,906        3.14        8.79
+         53 |      2,105        3.47       12.26
+         54 |      2,087        3.44       15.70
+         55 |      2,553        4.21       19.91
+         56 |      2,122        3.50       23.41
+         57 |      2,345        3.87       27.28
+         58 |      2,589        4.27       31.54
+         59 |      2,602        4.29       35.83
+         60 |      3,507        5.78       41.62
+         61 |      2,366        3.90       45.52
+         62 |      2,847        4.69       50.21
+         63 |      3,058        5.04       55.25
+         64 |      2,698        4.45       59.70
+         65 |      3,950        6.51       66.21
+         66 |      2,727        4.50       70.70
+         67 |      2,967        4.89       75.59
+         68 |      3,091        5.10       80.69
+         69 |      3,054        5.03       85.72
+         70 |      3,447        5.68       91.41
+         71 |      2,502        4.12       95.53
+         72 |      2,711        4.47      100.00
+------------+-----------------------------------
+      Total |     60,663      100.00
+
+. tab dum, gen(dum);
+
+    date of |
+birth, 1961 |
+to 1950=100 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+         62 |      2,847        4.69        4.69
+         63 |      3,058        5.04        9.73
+         64 |      2,698        4.45       14.18
+         65 |      3,950        6.51       20.69
+         66 |      2,727        4.50       25.19
+         67 |      2,967        4.89       30.08
+         68 |      3,091        5.10       35.17
+         69 |      3,054        5.03       40.21
+         70 |      3,447        5.68       45.89
+         71 |      2,502        4.12       50.02
+         72 |      2,711        4.47       54.48
+        100 |     27,611       45.52      100.00
+------------+-----------------------------------
+      Total |     60,663      100.00
+
+. for X in var dum1-dum12 \ Y in any ndum1 ndum2 ndum3 ndum4 ndum5 ndum6 n
+> dum7 ndum8 ndum9 ndum10 ndum11 ndum12:
+> gen Y=X*nin;
+
+->  gen ndum1=dum1*nin
+
+->  gen ndum2=dum2*nin
+
+->  gen ndum3=dum3*nin
+
+->  gen ndum4=dum4*nin
+
+->  gen ndum5=dum5*nin
+
+->  gen ndum6=dum6*nin
+
+->  gen ndum7=dum7*nin
+
+->  gen ndum8=dum8*nin
+
+->  gen ndum9=dum9*nin
+
+->  gen ndum10=dum10*nin
+
+->  gen ndum11=dum11*nin
+
+->  gen ndum12=dum12*nin
+
+. for X in var year1-year23 \ Y in any cYOB1 cYOB2 cYOB3 cYOB4 cYOB5 cYOB6
+>  cYOB7
+>  cYOB8 cYOB9 cYOB10 cYOB11 cYOB12 cYOB13 cYOB14  cYOB15 cYOB16 cYOB17 cY
+> OB18 cYOB19 cYOB20 cYOB21 cYOB22 cYOB23:
+> gen Y=X*ch71;
+
+->  gen cYOB1=year1*ch71
+
+->  gen cYOB2=year2*ch71
+
+->  gen cYOB3=year3*ch71
+
+->  gen cYOB4=year4*ch71
+
+->  gen cYOB5=year5*ch71
+
+->  gen cYOB6=year6*ch71
+
+->  gen cYOB7=year7*ch71
+
+->  gen cYOB8=year8*ch71
+
+->  gen cYOB9=year9*ch71
+
+->  gen cYOB10=year10*ch71
+
+->  gen cYOB11=year11*ch71
+
+->  gen cYOB12=year12*ch71
+
+->  gen cYOB13=year13*ch71
+
+->  gen cYOB14=year14*ch71
+
+->  gen cYOB15=year15*ch71
+
+->  gen cYOB16=year16*ch71
+
+->  gen cYOB17=year17*ch71
+
+->  gen cYOB18=year18*ch71
+
+->  gen cYOB19=year19*ch71
+
+->  gen cYOB20=year20*ch71
+
+->  gen cYOB21=year21*ch71
+
+->  gen cYOB22=year22*ch71
+
+->  gen cYOB23=year23*ch71
+
+. for Z in var year1-year23 \ Y in any eYOB1 eYOB2 eYOB3 eYOB4 eYOB5 eYOB6
+>  eYOB7
+>  eYOB8 eYOB9 eYOB10 eYOB11 eYOB12 eYOB13 eYOB14  eYOB15 eYOB16 eYOB17 eY
+> OB18 eYOB19 eYOB20 eYOB21 eYOB22 eYOB23:
+> gen Y = Z*en71;
+
+->  gen eYOB1 = year1*en71
+(197 missing values generated)
+
+->  gen eYOB2 = year2*en71
+(197 missing values generated)
+
+->  gen eYOB3 = year3*en71
+(197 missing values generated)
+
+->  gen eYOB4 = year4*en71
+(197 missing values generated)
+
+->  gen eYOB5 = year5*en71
+(197 missing values generated)
+
+->  gen eYOB6 = year6*en71
+(197 missing values generated)
+
+->  gen eYOB7 = year7*en71
+(197 missing values generated)
+
+->  gen eYOB8 = year8*en71
+(197 missing values generated)
+
+->  gen eYOB9 = year9*en71
+(197 missing values generated)
+
+->  gen eYOB10 = year10*en71
+(197 missing values generated)
+
+->  gen eYOB11 = year11*en71
+(197 missing values generated)
+
+->  gen eYOB12 = year12*en71
+(197 missing values generated)
+
+->  gen eYOB13 = year13*en71
+(197 missing values generated)
+
+->  gen eYOB14 = year14*en71
+(197 missing values generated)
+
+->  gen eYOB15 = year15*en71
+(197 missing values generated)
+
+->  gen eYOB16 = year16*en71
+(197 missing values generated)
+
+->  gen eYOB17 = year17*en71
+(197 missing values generated)
+
+->  gen eYOB18 = year18*en71
+(197 missing values generated)
+
+->  gen eYOB19 = year19*en71
+(197 missing values generated)
+
+->  gen eYOB20 = year20*en71
+(197 missing values generated)
+
+->  gen eYOB21 = year21*en71
+(197 missing values generated)
+
+->  gen eYOB22 = year22*en71
+(197 missing values generated)
+
+->  gen eYOB23 = year23*en71
+(197 missing values generated)
+
+. for X in var year1-year23 \ Y in any wYOB1 wYOB2 wYOB3 wYOB4 wYOB5 wYOB6
+>  wYOB7
+>  wYOB8 wYOB9 wYOB10 wYOB11 wYOB12 wYOB13 wYOB14  wYOB15 wYOB16 wYOB17 wY
+> OB18 wYOB19 wYOB20 wYOB21 wYOB22 wYOB23:
+> gen Y=X*wsppc;
+
+->  gen wYOB1=year1*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB2=year2*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB3=year3*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB4=year4*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB5=year5*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB6=year6*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB7=year7*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB8=year8*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB9=year9*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB10=year10*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB11=year11*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB12=year12*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB13=year13*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB14=year14*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB15=year15*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB16=year16*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB17=year17*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB18=year18*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB19=year19*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB20=year20*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB21=year21*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB22=year22*wsppc
+(5,322 missing values generated)
+
+->  gen wYOB23=year23*wsppc
+(5,322 missing values generated)
+
+. cap log close;

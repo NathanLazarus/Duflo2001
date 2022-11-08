@@ -1,0 +1,74 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\Nathan\Downloads\inpresrepli\log/table1.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Oct 2022, 18:16:06
+{txt}
+{com}. sum yeduc if nin!=. [w=weight] ;
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 7}yeduc {c |}{res} 152,989    32229528    7.798749   4.054407          0         19
+{txt}
+{com}. sum yeduc if lhwage !=.  & nin!=. [w=weight] ;
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 7}yeduc {c |}{res}  60,663    13385875    9.003097   4.062545          0         19
+{txt}
+{com}. sum nin [w=weight] ;
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 9}nin {c |}{res} 152,989    32229528    1.976701   .9285546   .5908243   8.598269
+{txt}
+{com}. sum nin if lhwage !=. [w=weight];
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 9}nin {c |}{res}  60,663    13385875     1.89071   .8800442   .5908243   8.598269
+{txt}
+{com}. sum nin if recp==1 [w=weight];
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 9}nin {c |}{res}  69,338    15664922    2.441633    .780263   1.143066    8.28561
+{txt}
+{com}. sum nin if recp==0 [w=weight];
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 9}nin {c |}{res}  83,651    16564606    1.537022   .8391193   .5908243   8.598269
+{txt}
+{com}. sum lhwage if nin !=. [w=weight] ;
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 6}lhwage {c |}{res}  60,663    13385875    6.872458   .6826177   3.533587   11.95921
+{txt}
+{com}. /*use kabdat2.dta;
+> sum totin;
+> sum nin;
+> sum en71;
+> */
+
+{txt}end of do-file
+
+{com}. do wald;
+{txt}
+{com}. #delimit ;
+{txt}delimiter now ;
+{com}. version 10;
+{txt}
+{com}.  *WALD TABLE;
+. cap log close;
+{smcl}
+{com}{sf}{ul off}

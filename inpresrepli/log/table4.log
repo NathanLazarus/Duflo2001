@@ -1,0 +1,250 @@
+--------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Nathan\Downloads\inpresrepli\log/table4.log
+  log type:  text
+ opened on:  23 Oct 2022, 18:16:07
+
+. quietly anova yeduc birthpl p504th p504th*ch71 nin*treat2b if (treat1b==
+> 1|treat2b==1),  cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  78470
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.12391499
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .02504155
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 nin*treat2b i
+> f (treat1b==1|treat2b==1), cont(nin ch71 en71);
+
+. display "N.OBS  " e(N);
+N.OBS  78204
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.1498655
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .02595102
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 p504th*wsppc 
+> nin*treat2b if (treat1b==1|treat2b==1), cont(nin ch71 en71 wsppc);
+
+. display "N.OBS  " e(N);
+N.OBS  72887
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.18766259
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .02895754
+
+. *WAGE SAMPLE;
+. quietly anova yeduc birthpl p504th p504th*ch71 nin*treat2b if (treat1b==
+> 1|treat2b==1) & lhwage !=.,
+> cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  31061
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.19591663
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .04244169
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 nin*treat2b i
+> f (treat1b==1|treat2b==1) & lhwage !=.,
+> cont(nin ch71 en71 );
+
+. display "N.OBS  " e(N);
+N.OBS  30958
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.19991377
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .04289491
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 p504th*wsppc 
+> nin*treat2b if (treat1b==1|treat2b==1) & lhwage !=.,
+> cont(nin ch71 en71 wsppc);
+
+. display "N.OBS  " e(N);
+N.OBS  28080
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.25990095
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .04991327
+
+. *WAGE regressions;
+. quietly anova lhwage birthpl p504th p504th*ch71 nin*treat2b if (treat1b=
+> =1|treat2b==1),  cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  31061
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.01473805
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .00729053
+
+. quietly anova lhwage birthpl p504th p504th*ch71 p504th*en71 nin*treat2b 
+> if (treat1b==1|treat2b==1), cont(nin ch71 en71);
+
+. display "N.OBS  " e(N);
+N.OBS  30958
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.01724063
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .00736654
+
+. quietly anova lhwage birthpl p504th p504th*ch71 p504th*en71 p504th*wsppc
+>  nin*treat2b if (treat1b==1|treat2b==1), cont(nin ch71 en71 wsppc);
+
+. display "N.OBS  " e(N);
+N.OBS  28080
+
+. display "coeff  " _b[nin*treat2b[1]];
+coeff  -.0269993
+
+. display "S.E    " _se[nin*treat2b[1]];
+S.E    .00850024
+
+. *CONTROL EXPERIMENT;
+. quietly anova yeduc birthpl p504th p504th*ch71 nin*treat1b if p504thn<=6
+> 2,
+> cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  78488
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.00925244
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .02606295
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 nin*treat1b i
+> f p504thn<=62,
+> cont(nin ch71 en71);
+
+. display "N.OBS  " e(N);
+N.OBS  78215
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.01761661
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .02709937
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 p504th*wsppc 
+> nin*treat1b if p504thn<=62,
+>  cont(nin ch71 en71 wsppc);
+
+. display "N.OBS  " e(N);
+N.OBS  74572
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.0075718
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .02974063
+
+. *CONTROL EXPERIMENT, WAGE SAMPLE;
+. quietly anova yeduc birthpl p504th p504th*ch71 nin*treat1b if p504thn<=6
+> 2 & lhwage !=.,
+> cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  30458
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.01203564
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .04740009
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 nin*treat1b i
+> f p504thn<=62  & lhwage !=.,
+> cont(nin ch71 en71);
+
+. display "N.OBS  " e(N);
+N.OBS  30360
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.02449417
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .0481008
+
+. quietly anova yeduc birthpl p504th p504th*ch71 p504th*en71 p504th*wsppc 
+> nin*treat1b if p504thn<=62  & lhwage !=.,
+>  cont(nin ch71 en71 wsppc);
+
+. display "N.OBS  " e(N);
+N.OBS  28273
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.07942584
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .0545889
+
+. *CONTROL EXPERIMENT, WAGE REGRESSIONS;
+. quietly anova lhwage birthpl p504th p504th*ch71 nin*treat1b if p504thn<=
+> 62,
+> cont(nin ch71) ;
+
+. display "N.OBS  " e(N);
+N.OBS  30458
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.00314273
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .00798054
+
+. quietly anova lhwage birthpl p504th p504th*ch71 p504th*en71 nin*treat1b 
+> if p504thn<=62,
+> cont(nin ch71 en71);
+
+. display "N.OBS  " e(N);
+N.OBS  30360
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.00399406
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .00809811
+
+. quietly anova lhwage birthpl p504th p504th*ch71 p504th*en71 p504th*wsppc
+>  nin*treat1b if p504thn<=62,
+>  cont(nin ch71 en71 wsppc);
+
+. display "N.OBS  " e(N);
+N.OBS  28273
+
+. display "coeff  " _b[nin*treat1b[1]];
+coeff  -.01444838
+
+. display "S.E    " _se[nin*treat1b[1]];
+S.E    .0091546
+
+. 
+end of do-file
+
+. do table5;
+
+. # delimit ;
+delimiter now ;
+. *PROGRAME FOR TABLE 4;
+.  set matsize 400;
+
+.  cap log close;

@@ -1,0 +1,328 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\Nathan\Downloads\inpresrepli\log/table6A2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Oct 2022, 18:16:27
+{txt}
+{com}. quietly anova lwage yeduc p504thn birthpl ch71, cont(ch71 yeduc);
+{txt}
+{com}. display "coeff X= " _b[yeduc];
+{res}coeff X= .06979482
+{txt}
+{com}. display "se X= " _se[yeduc];
+{res}se X= .0006014
+{txt}
+{com}. quietly anova lwage yeduc p504thn birthpl ch71 en71, cont(ch71 yeduc en71);
+{txt}
+{com}. display "coeff X= " _b[yeduc];
+{res}coeff X= .06981904
+{txt}
+{com}. display "se X= " _se[yeduc];
+{res}se X= .00060242
+{txt}
+{com}. quietly anova lwage yeduc p504thn birthpl ch71 en71 wsppc, cont(ch71 yeduc en71 wsppc);
+{txt}
+{com}. display "coeff X= " _b[yeduc];
+{res}coeff X= .06888595
+{txt}
+{com}. display "se X= " _se[yeduc];
+{res}se X= .00062823
+{txt}
+{com}. quietly reg lwage yeduc year1-year23 ROB1-ROB290 cYOB1-cYOB23 (year1-year23 ROB1-ROB290 cYOB1-cYOB23
+> ndum1 ndum2 ndum3 ndum4 ndum5 ndum6 ndum7 ndum8 ndum9 ndum10 ndum11 ndum12);
+{txt}
+{com}. display "coeff X= " _b[yeduc];
+{res}coeff X= .07559651
+{txt}
+{com}. display "se X= " _se[yeduc];
+{res}se X= .02801826
+{txt}
+{com}. quietly reg lwage yeduc year1-year23 ROB1-ROB290 cYOB1-cYOB23 eYOB1-eYOB23 (year1-year23 ROB1-ROB290 cYOB1-cYOB23
+> ndum1 ndum2 ndum3 ndum4 ndum5 ndum6 ndum7 ndum8 ndum9 ndum10 ndum11 ndum12 eYOB1-eYOB23);
+{txt}
+{com}. display "coeff X= " _b[yeduc];
+{res}coeff X= .09245526
+{txt}
+{com}. display "se X= " _se[yeduc];
+{res}se X= .02777735
+{txt}
+{com}. quietly reg lwage yeduc year1-year23 ROB1-ROB290 cYOB1-cYOB23 eYOB1-eYOB23 wYOB1-wYOB23 (year1-year23 ROB1-ROB290 cYOB1-cYOB23
+> ndum1 ndum2 ndum3 ndum4 ndum5 ndum6 ndum7 ndum8 ndum9 ndum10 ndum11 ndum12 eYOB1-eYOB23 wYOB1-wYOB23);
+{txt}
+{com}. display "coeff X= " _b[yeduc];
+{res}coeff X= .09128392
+{txt}
+{com}. display "se X= " _se[yeduc];
+{res}se X= .02190797
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do table6B1;
+{txt}
+{com}. # delimit ;
+{txt}delimiter now ;
+{com}. *2SLS;
+. *use supa2, clear;
+. use inpresdata, clear;
+{txt}
+{com}. gen part=(lhwage!=.);
+{txt}
+{com}. keep birthpl ch71 en71 nin wsppc lwage yeduc dum p504thn lhwage part;
+{txt}
+{com}. quietly tab birthpl, gen(ROB);
+{txt}
+{com}. quietly tab p504thn, gen(year);
+{txt}
+{com}. quietly tab dum, gen(dum);
+{txt}
+{com}. for X in var dum1-dum12 \ Y in any ndum1 ndum2 ndum3 ndum4 ndum5 ndum6 ndum7 ndum8 ndum9 ndum10 ndum11 ndum12:
+> gen Y=X*nin;
+
+{res}->  gen ndum1=dum1*nin
+
+->  gen ndum2=dum2*nin
+
+->  gen ndum3=dum3*nin
+
+->  gen ndum4=dum4*nin
+
+->  gen ndum5=dum5*nin
+
+->  gen ndum6=dum6*nin
+
+->  gen ndum7=dum7*nin
+
+->  gen ndum8=dum8*nin
+
+->  gen ndum9=dum9*nin
+
+->  gen ndum10=dum10*nin
+
+->  gen ndum11=dum11*nin
+
+->  gen ndum12=dum12*nin
+{txt}
+{com}. for X in var year1-year23 \ Y in any cYOB1 cYOB2 cYOB3 cYOB4 cYOB5 cYOB6 cYOB7
+>  cYOB8 cYOB9 cYOB10 cYOB11 cYOB12 cYOB13 cYOB14  cYOB15 cYOB16 cYOB17 cYOB18 cYOB19 cYOB20 cYOB21 cYOB22 cYOB23:
+> gen Y=X*ch71;
+
+{res}->  gen cYOB1=year1*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB2=year2*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB3=year3*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB4=year4*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB5=year5*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB6=year6*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB7=year7*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB8=year8*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB9=year9*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB10=year10*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB11=year11*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB12=year12*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB13=year13*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB14=year14*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB15=year15*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB16=year16*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB17=year17*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB18=year18*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB19=year19*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB20=year20*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB21=year21*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB22=year22*ch71
+{txt}(1 missing value generated)
+
+{res}->  gen cYOB23=year23*ch71
+{txt}(1 missing value generated)
+
+{com}. for Z in var year1-year23 \ Y in any eYOB1 eYOB2 eYOB3 eYOB4 eYOB5 eYOB6 eYOB7
+>  eYOB8 eYOB9 eYOB10 eYOB11 eYOB12 eYOB13 eYOB14  eYOB15 eYOB16 eYOB17 eYOB18 eYOB19 eYOB20 eYOB21 eYOB22 eYOB23:
+> gen Y = Z*en71;
+
+{res}->  gen eYOB1 = year1*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB2 = year2*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB3 = year3*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB4 = year4*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB5 = year5*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB6 = year6*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB7 = year7*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB8 = year8*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB9 = year9*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB10 = year10*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB11 = year11*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB12 = year12*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB13 = year13*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB14 = year14*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB15 = year15*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB16 = year16*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB17 = year17*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB18 = year18*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB19 = year19*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB20 = year20*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB21 = year21*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB22 = year22*en71
+{txt}(495 missing values generated)
+
+{res}->  gen eYOB23 = year23*en71
+{txt}(495 missing values generated)
+
+{com}. for X in var year1-year23 \ Y in any wYOB1 wYOB2 wYOB3 wYOB4 wYOB5 wYOB6 wYOB7
+>  wYOB8 wYOB9 wYOB10 wYOB11 wYOB12 wYOB13 wYOB14  wYOB15 wYOB16 wYOB17 wYOB18 wYOB19 wYOB20 wYOB21 wYOB22 wYOB23:
+> gen Y=X*wsppc;
+
+{res}->  gen wYOB1=year1*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB2=year2*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB3=year3*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB4=year4*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB5=year5*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB6=year6*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB7=year7*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB8=year8*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB9=year9*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB10=year10*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB11=year11*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB12=year12*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB13=year13*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB14=year14*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB15=year15*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB16=year16*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB17=year17*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB18=year18*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB19=year19*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB20=year20*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB21=year21*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB22=year22*wsppc
+{txt}(9,389 missing values generated)
+
+{res}->  gen wYOB23=year23*wsppc
+{txt}(9,389 missing values generated)
+
+{com}. cap log close;
+{smcl}
+{com}{sf}{ul off}
